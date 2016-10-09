@@ -1,0 +1,12 @@
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+.DS_Store
+.htaccess
+*.log
+*.bak
+/vendor
+
+# Do not ignore plugins dir, but ignore everything inside
+!/wp-content/plugins
+/wp-content/plugins/*

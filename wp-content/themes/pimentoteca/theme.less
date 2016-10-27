@@ -1,0 +1,317 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700);
+@green_zen: #fa6819; //#fa0000;
+@green_zen_light: #fa5c5c;
+@orange: #dda723;
+@grey: #292929;
+@grey_light: #cdcdcd;
+@grey_text: #333;
+@white: #fff;
+
+//Breakpoints
+@mobile:      ~"only screen and (max-width: 689px)";
+@tablet:      ~"only screen and (min-width: 690px) and (max-width: 959px)";
+@desktop:     ~"only screen and (min-width: 960px)";
+
+.opensans{ font-family:'Open Sans', Helvetica, Arial, sans-serif !important; }
+
+.transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -o-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -ms-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+	-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+
+body{
+	.opensans;
+	color: @grey_text;
+	background-color: #f3f3f3 !important;
+	line-height: 25px !important;
+
+}
+h1, h2, h3, h4{
+    .opensans;
+    a:hover{
+    	text-decoration: none;
+    }
+}
+a:link, a:visited{
+    color:@green_zen;
+    transition:all 0.2s;
+
+    &:hover{color:@orange;}
+}
+
+.entry-meta{
+	span:nth-of-type(2),
+	span:nth-of-type(3){
+		display: none;
+	}
+}
+
+.site-header,
+.btn-cta{
+	background-color: @white;
+}
+.site-header{
+	@media @mobile { 
+		margin-bottom: 10px;
+
+		.col-sm-12{
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	@media @desktop { 
+		border-bottom: 1px solid @green_zen_light;
+	}
+
+	margin-bottom: 0;
+	padding-bottom: 0;
+
+}
+
+.site-branding{
+	img{
+		margin-top: 0;
+		padding: 5px 0 0;
+		max-width: 80%;
+		@media @mobile { 
+			max-width: 60%;
+			float: left;
+			margin-top: 8px;
+		}
+	}
+	a{
+		display: inline;
+	}
+}
+
+.main-navigation .navbar-nav > li > a:hover,
+.main-navigation .navbar-nav > .active > a,
+.main-navigation .navbar-nav > li > a:focus{
+	background-color: @green_zen;
+}
+
+@media @desktop {
+	.navbar-collapse{
+		padding-right: 0 !important;
+	}
+}
+.main-navigation{
+	 .navbar-nav{
+	 	a{
+	 		color: @green_zen !important;
+	 		font-size: 16px !important;
+	 		letter-spacing: 1px !important;
+	 		padding: 70px 10px 15px !important;
+   			transition:all 0.6s;
+	 		@media @mobile { padding: 8px 10px !important; }
+			&:hover{
+				color: @white !important;
+			}
+	 	}
+
+	 	.active{
+	 		a{
+	 			color: @white !important;
+	 		}
+	 	}
+	}
+}
+.navbar-toggle{
+	background-color: @green_zen !important;
+	@media @mobile {
+		margin-top: 15px !important;
+		margin-right: 0 !important;
+	}
+
+}
+
+.widget{
+	a{
+		color: @green_zen;
+		&:hover{
+			color: @orange;
+		}
+	}
+	.box-shadow(0px, 0px, 0px, 0);
+	text-align: center;
+	padding: 25px 0;
+	margin-bottom: 0;
+}
+
+.more-link{
+	text-align: right;
+	a{
+		border-color: @green_zen;
+		color: @white;
+		background-color: @green_zen;
+		&:hover{
+			border-color: @orange;
+		}
+		.border-radius-custom(6px, 6px, 6px, 6px);
+	}
+}
+
+.site-main{
+	.entry-header{
+		text-align: left;
+	}
+	.entry-title{
+		margin-bottom: 10px;
+		line-height: 1.2;
+		color: @green_zen;
+		font-weight: 600;
+		font-size: 24px;
+	}
+	.entry-media{
+		max-width: 100% !important;
+		height: auto !important;
+		margin: 0 0 20px;
+
+		img{
+			object-fit:cover;
+			width: 730px;
+			height: 300px;
+
+			@media @mobile {
+				height: 130px;
+			}
+		}
+	}
+	.post-navigation, .posts-navigation{
+		display: none;
+	}
+	.comments-area{
+		.box-shadow(0px, 0px, 0px, 0);
+		label{
+			display: none;
+		}
+	}
+}
+
+.home {
+	article{
+		.border-radius-custom(6px, 6px, 6px, 6px);
+		.box-shadow(0px, 0px, 0px, 0);
+		border-bottom:2px solid @green_zen_light;
+		margin-bottom:20px;
+	}
+}
+.single-post{
+	article{
+		.box-shadow(0px, 0px, 0px, 0);
+		.border-radius-custom(6px, 6px, 0px, 0px);
+		margin-bottom: 0;
+	}
+}
+
+
+.site-content{
+	#primary,  #secondary{
+		margin-top: 25px;
+		@media @mobile {
+			margin-top: 5px;
+		}
+	}
+	.col-md-8, .col-md-4{
+		@media @mobile {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	aside{
+		&:first-child{
+			.border-radius-custom(6px, 6px, 0px, 0px);
+		}
+		.widget-title{
+			margin-bottom: 0;
+			text-align: left;
+			padding: 0 25px;
+			font-size: 20px;
+		}
+		.expert_card {
+			vertical-align: top;
+			padding: 20px 25px 0;
+			text-align: left;
+			border-bottom: 1px solid #f3f3f3;
+			&:last-child{
+				border:none;
+			}
+
+			img{
+				max-width: 31%;
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 10px;
+				opacity: .9;
+				@media @mobile {
+					margin-right: 0;
+				}
+				.border-radius-custom(6px, 6px, 6px, 6px);
+				&:hover{
+					transition:all 0.8s;
+					.border-radius-custom(0px, 0px, 0px, 0px);
+					opacity: 1;
+				}
+			}
+			div{
+				width: 64%;
+				min-height: 115px;
+				line-height: 20px;
+				display: inline-block;
+
+				h4{
+					margin-top: 0;
+				}
+				.btn{
+					color: @white;
+				}
+			}
+			a{
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+}
+
+.site-footer{
+	border-top-color: @green_zen;
+}
+/* Hides navigation links and site footer when infinite scroll is active */
+.infinite-scroll #navigation,
+.infinite-scroll.neverending #footer,
+#infinite-footer {
+    display: none;
+}
+
+@media @mobile { .cta-desktop{ display: none; } }
+@media @desktop { .cta-mobile{ display: none; } }
+@media @tablet { .cta-mobile{ display: none; } }

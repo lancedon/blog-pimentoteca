@@ -1,4 +1,5 @@
 wp-config.php
+wp-content/themes/pimentoteca/header.php
 wp-content/uploads/
 wp-content/cache/
 .DS_Store

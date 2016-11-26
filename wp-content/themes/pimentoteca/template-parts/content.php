@@ -30,7 +30,7 @@
 		<?php
 			the_excerpt( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'brood' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Leia mais %s <span class="meta-nav">&rarr;</span>', 'brood' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
@@ -43,8 +43,10 @@
 		?>
 	</div><!-- .entry-content -->
 	<div class="more-link">
-		<?php echo '<a href="'.esc_url( get_permalink() ).'">'.__( 'Ler mais', 'brood' ).'</a>'; ?>
+		<?php echo '<a href="'.esc_url( get_permalink() ).'">'.__( 'Leia mais', 'brood' ).'</a>'; ?>
 	</div>
-	<?php edit_post_link( '<span class="edit-link"><i class="glyphicon glyphicon-pencil"></i></span>' );
+	<?php edit_post_link(
+			'<span class="edit-link"><i class="glyphicon glyphicon-pencil"></i></span>'
+			);
 	?>
 </article><!-- #post-## -->

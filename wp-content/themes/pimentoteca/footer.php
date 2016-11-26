@@ -16,15 +16,19 @@
 		<?php if( is_active_sidebar('footer-left') || is_active_sidebar('footer-center') || is_active_sidebar('footer-right') ) : ?>
 		<div class="foo-widgets">
 			<div class="container">
+				<!-- 
 				<div class="col-sm-4">
 					<?php dynamic_sidebar('footer-left'); ?>
 				</div>
-				<div class="col-sm-4">
+				-->	
+				<div>
 					<?php dynamic_sidebar('footer-center'); ?>
 				</div>
+				<!--	
 				<div class="col-sm-4">
 					<?php dynamic_sidebar('footer-right'); ?>
 				</div>
+			        -->	
 			</div><!-- .container -->
 		</div>
 		<?php endif; ?>

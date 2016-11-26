@@ -37,7 +37,7 @@ function brood_posted_on() {
 	echo '<h6><span class="posted-on">' . $posted_on . '</span><span class="seperator">|</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		//echo '<span class="seperator">|</span><span class="comments-link">';
-		//comments_popup_link( esc_html__( '--Leave a comment', 'brood' ), esc_html__( '1 Comment', 'brood' ), esc_html__( '% Comments', 'brood' ) );
+		//comments_popup_link( esc_html__( 'Leave a comment', 'brood' ), esc_html__( '1 Comment', 'brood' ), esc_html__( '% Comments', 'brood' ) );
 		//echo '</span>';
 	}
 

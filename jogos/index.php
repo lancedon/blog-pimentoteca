@@ -28,7 +28,7 @@ $('#bt-facebook').click( function(event){
   console.log('aqui');
 
     event.preventDefault();    
-    destino = '/face/teste.php';
+    destino = '/blog/jogos/teste.php';
  
     FB.login( function(response){
         if (response.authResponse) {

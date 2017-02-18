@@ -7,6 +7,7 @@ wp-content/cache/
 *.log
 *.bak
 /vendor
+/jogos/avatar/*
 
 # Do not ignore plugins dir, but ignore everything inside
 !/wp-content/plugins

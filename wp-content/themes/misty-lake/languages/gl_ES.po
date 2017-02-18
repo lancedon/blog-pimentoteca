@@ -1,0 +1,328 @@
+# Translation of Misty Lake in Galician
+# This file is distributed under the same license as the Misty Lake package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-01 16:31:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Misty Lake\n"
+
+msgid "Full-Width Page"
+msgstr ""
+
+msgid "Misty Lake gives you a tranquil, mellow backdrop on which you can let your content shine. It supports five post formats, a sidebar, custom menu, custom header, and custom background."
+msgstr ""
+
+#: sidebar.php:26
+msgid "Meta"
+msgstr "Meta"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "Buscar &hellip;"
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "Procura"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Resultados da procura de: %s"
+
+#: no-results.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que non atopamos o que estás a buscar. Quizais unha procura axude. "
+
+#: no-results.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sentímolo, non hai nada que coincida cos termos de busca. Podes tentar de novo con palabras diferentes."
+
+#: no-results.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Preparado/a para publicar o teu primeiro artigo? <a href=\"%1$s\">Comeza aquí</a>."
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr "Non se atopou nada"
+
+#: inc/template-tags.php:127
+msgid "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> por <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: inc/template-tags.php:133
+msgid "View all posts by %s"
+msgstr "Ver todos os artigos de %s"
+
+#: inc/template-tags.php:102
+msgid "Your comment is awaiting moderation."
+msgstr "O teu comentario está á espera de moderación."
+
+#: inc/template-tags.php:94
+msgid "%1$s at %2$s"
+msgstr "%1$s ás %2$s "
+
+#: inc/template-tags.php:78
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Artigos máis recentes <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Artigos anteriores"
+
+#: inc/template-tags.php:44
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:39
+msgid "Post navigation"
+msgstr "Navegación de artigos"
+
+#: inc/custom-header.php:34
+msgctxt "Header image description"
+msgid "Lake"
+msgstr ""
+
+#: inc/extras.php:74
+msgid "Page %s"
+msgstr "Páxina %s"
+
+#: image.php:70
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Están pechados tanto os comentarios como os trackbacks."
+
+#: image.php:68
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Os trackbacks está pechados, pero podes <a class=\"comment-link\" href=\"#respond\" title=\"Enviar un comentario\">enviar un comentario</a>. "
+
+#: image.php:66
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Os comentarios están pechados, pero podes deixar un trackback: <a class=\"trackback-link\" href=\"%s\" title=\"URL do trackback para o teu artigo\" rel=\"trackback\">URL do trackback</a>. "
+
+#: image.php:64
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Envía un comentario\">Envía un comentario</a> ou deixa un trackback: <a class=\"trackback-link\" href=\"%s\" title=\"URL do trackback para o teu artigo\" rel=\"trackback\">URL do trackback</a>."
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "Seguinte &rarr;"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: header.php:36
+msgid "Skip to content"
+msgstr "Saltar ao contido"
+
+#: functions.php:188
+msgid "Show list of subpages below content on Parent Pages"
+msgstr ""
+
+#: header.php:35
+msgid "Menu"
+msgstr "Menú"
+
+#: functions.php:179
+msgid "Theme Options"
+msgstr "Opcións do tema"
+
+#: functions.php:115
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:138
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:95
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "ningún subconxunto"
+
+#: functions.php:89
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "activada"
+
+#: functions.php:63
+msgid "Primary Menu"
+msgstr "Menú primario"
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s."
+
+#: footer.php:17
+msgid "Proudly powered by %s"
+msgstr "Fornecido con orgullo por %s"
+
+#: footer.php:17
+msgid "A Semantic Personal Publishing Platform"
+msgstr ""
+
+#: content.php:62
+msgid "Tagged %1$s"
+msgstr "Etiquetado %1$s"
+
+#: content.php:51
+msgid "Posted in %1$s"
+msgstr "Publicado en %1$s"
+
+#: content.php:21
+msgid "Featured"
+msgstr "Destacado"
+
+#: content.php:12
+msgid "Permanent Link to %s"
+msgstr "Ligazón Permanente a %s "
+
+#: content-single.php:42
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Esta entrada foi publicada en %1$s. <a href=\"%3$s\" title=\"Ligazón permanente a %4$s\" rel=\"bookmark\">Ligazón permanente</a>."
+
+#: content-single.php:40
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Estas entrada foi publicada en %1$s coas etiquetas %2$s. <a href=\"%3$s\" title=\"ligazón permanente a %4$s\" rel=\"bookmark\">Ligazón permanente</a>."
+
+#: content-single.php:34
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Marcar a <a href=\"%3$s\" title=\"Ligazón permanente a %4$s\" rel=\"bookmark\">ligazón permanente</a>."
+
+#: content-single.php:32
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:24 content-single.php:27 content.php:47 content.php:57
+msgid ", "
+msgstr ","
+
+#: content-page.php:27
+msgid "This page has the following sub pages."
+msgstr "Está páxina contén as seguintes subpáxinas:"
+
+#: content-formats.php:40 content-page.php:35 content-single.php:56
+#: content.php:71 image.php:34 image.php:72 inc/template-tags.php:78
+#: inc/template-tags.php:96
+msgid "Edit"
+msgstr "Editar"
+
+#: content-formats.php:37 content.php:68
+msgid "% Comments"
+msgstr "% Comentarios"
+
+#: content-formats.php:37 content.php:68
+msgid "1 Comment"
+msgstr ""
+
+#: content-formats.php:37 content.php:68
+msgid "Leave a comment"
+msgstr "Deixar un comentario"
+
+#: content-formats.php:34
+msgid "All %s posts"
+msgstr "Todos os artigos de %s"
+
+#: content-formats.php:26 content-page.php:17 content-single.php:18
+#: content.php:39 image.php:58
+msgid "Pages:"
+msgstr "Páxinas:"
+
+#: content-formats.php:25 content.php:38
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Seguir lendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:67
+msgid "Comments are closed."
+msgstr "Os comentarios están pechados."
+
+#: comments.php:37 comments.php:57
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios máis recentes &rarr;"
+
+#: comments.php:36 comments.php:56
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios máis antigos"
+
+#: comments.php:35 comments.php:55
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: comments.php:28
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: archive.php:70 sidebar.php:19
+msgid "Archives"
+msgstr "Arquivo"
+
+#: archive.php:67
+msgid "Links"
+msgstr "Ligazóns"
+
+#: archive.php:64
+msgid "Quotes"
+msgstr "Citas"
+
+#: archive.php:61
+msgid "Videos"
+msgstr "Videos"
+
+#: archive.php:58
+msgid "Images"
+msgstr "Imaxes"
+
+#: archive.php:52
+msgid "Year: %s"
+msgstr "Ano: %s"
+
+#: archive.php:55
+msgid "Asides"
+msgstr "Minientradas"
+
+#: archive.php:49
+msgid "Month: %s"
+msgstr "Mes: %s"
+
+#: archive.php:46
+msgid "Day: %s"
+msgstr "Día: %s"
+
+#: archive.php:32
+msgid "Author: %s"
+msgstr "Autor/a: %s"
+
+#: 404.php:35
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Proba a buscar nos arquivos mensuais. %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Categorías máis utilizadas"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Vaia! Non atopamos esa páxina."

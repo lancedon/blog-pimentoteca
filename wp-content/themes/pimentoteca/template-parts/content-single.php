@@ -35,7 +35,6 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

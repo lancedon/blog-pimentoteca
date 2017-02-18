@@ -1,0 +1,165 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: #333;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 16px;
+	line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #111;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+	clear: both;	
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: 2.4em;
+}
+
+h2 {
+	font-size: 2.2em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.8em;
+}
+
+h5 {
+	font-size: 1.6em;
+}
+
+h6 {
+	font-size: 1.4em;
+}
+
+a{
+	color:rgba(0, 0, 0, 0.6);
+	text-decoration: none;
+}
+a:hover{
+	color:rgba(0, 0, 0, 1);
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+  color:rgba(0, 0, 0, 1);
+  text-decoration: none;
+  border:none;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {
+  border: 1px solid #ccc;
+  color: #333;
+  font-family: "Lato",sans-serif;
+  padding: 5px;
+}
+
+	/*blockquote*/
+
+	blockquote {
+	  border-left: medium none;
+	  font-family: lato;
+	  font-size: 21px;
+	  font-weight: 400;
+	  padding: 10px 20px;
+	}
+
+	blockquote::before {
+	  color: #d9d9d9;
+	  content: "\f10d";
+	  font-family: fontawesome;
+	  font-size: 25px;
+	  left: 25px;
+	  position: absolute;
+	}
+
+
+	tt, code, var{
+		font-size: 13px;
+	}
+	
+		/*table*/
+	.mce-item-table th{
+	  border: 1px solid #d9d9d9;
+	  text-align: center;
+	  padding: 5px;
+	}
+
+	.mce-item-table td {
+	  border: 1px solid #d9d9d9;
+	  padding: 5px;
+	}
+
+	tt, code, var{
+		font-size: 13px;
+	}

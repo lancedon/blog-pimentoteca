@@ -284,7 +284,10 @@ function get_the_content( $more_link_text = null, $strip_teaser = false ) {
 	if ( $page > count( $pages ) ) // if the requested page doesn't exist
 		$page = count( $pages ); // give them the highest numbered page that DOES exist
 
-	$content = $pages[$page - 1];
+	$content = '<div class="entry-media">'.$pages[$page - 1].'</div>';
+
+
+	
 	if ( preg_match( '/<!--more(.*?)?-->/', $content, $matches ) ) {
 		$content = explode( $matches[0], $content, 2 );
 		if ( ! empty( $matches[1] ) && ! empty( $more_link_text ) )

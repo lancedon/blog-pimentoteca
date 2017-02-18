@@ -1,0 +1,69 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+@media (max-width: 767px) {
+	div.menu{display: none;}
+	div.slicknav_menu{display: block;}
+	#top-search i.search-desktop{display: none;}
+	#top-search i.search-toggle{display: block;}
+	#top-search input.search-field { display: none; }
+	div#top-social{top:0;right:70px;}
+	div#top-search{top:0;}
+	
+	.slicknav_menu {
+	  background: #000;
+	}
+	.slicknav_menu .slicknav_icon-bar {
+	  background-color: #fff;
+	}
+	.slicknav_nav{
+		background: #000;
+	}
+	.slicknav_nav a{
+	  color: #ddd;
+	  display: block;
+	  font-size: 14px;
+	  font-family: lato;
+	  letter-spacing: 1px;
+	  padding: 11px;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	  border-top:1px solid rgba(255, 255, 255, 0.2)
+	}
+	.slicknav_item a{
+		border-top: none;
+	}
+	#top-search i {
+	  color: #fff;
+	  font-size: 14px;
+	  padding:0 10px;
+	  position: absolute;
+	  right: 10px;
+	  top: 0;  
+	}
+	.identifier{
+	  border-left: 1px solid #ddd;
+	  border-right: 1px solid #ddd;
+	}
+	.content-area{
+		padding-right: 15px;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.show-search{display: none !important;}
+	
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) { 
+	#top-search input {
+	  width: 212px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}

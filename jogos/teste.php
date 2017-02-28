@@ -154,9 +154,40 @@ if(count($potentialPositions) > 0)
 // Copy and merge
 imagecopymerge($large, $merge, $mostLikely["x"], $mostLikely["y"], 0, 0, $smallwidth, $smallheight, 100);
 
+
+// Cor de saída
+$cor = imagecolorallocate( $large, 255, 255, 255 );
+/* @Parametros
+ * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
+ * 255 - Cor vermelha ( RGB )
+ * 255 - Cor verde ( RGB )
+ * 255 - Cor azul ( RGB )
+ * -- No caso acima é branco
+ */
+ 
+// Texto que será escrito na imagem
+$nome = urldecode( 'teste' );
+/* @Parametros
+ * $_GET['nome'] - Texto que será escrito
+ */
+ 
+// Escrever nome
+imagestring( $large, 5, 15, 515, $nome, $cor );
+/* @Parametros
+ * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
+ * 5 - tamanho da fonte. Valores de 1 a 5
+ * 15 - Posição X do texto na imagem
+ * 515 - Posição Y do texto na imagem
+ * $nome - Texto que será escrito
+ * $cor - Cor criada pelo imagecolorallocate
+ */
+
+
 // Output and free from memory
 header('Content-Type: image/jpeg');
 imagejpeg($large);
+
+
 
 
 imagedestroy($small);

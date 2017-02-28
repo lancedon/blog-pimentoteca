@@ -95,7 +95,7 @@ class Game extends CircleCrop{
 
 		//Facebook sdk v3
 
-		require 'src/facebook.php';
+		require '../src/facebook.php';
 
 		// Create our Application instance (replace this with your appId and secret).
 		$facebook = new Facebook(array(

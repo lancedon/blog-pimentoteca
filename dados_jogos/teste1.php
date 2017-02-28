@@ -3,7 +3,7 @@
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', '1');
 
-echo ."<pre>".print_r($_COOKIE)."</pre><<<<br>";
+echo "<pre>".print_r($_COOKIE)."</pre><<<<br>";
 
 #defina aqui o local onde estao todas as imagens do teste
 $img_path = dirname(__file__) . '/dados_jogos/imgs/teste1/';

@@ -31,6 +31,9 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 
 			 		console.log(FB_status);
 			 		if (FB_status === "connected"){
+			 			
+			 				console.log(document.cookie);
+			 				alert(document.cookie);
 
 			 				 window.location.href=destino;
 
@@ -41,6 +44,7 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 						    if (response.authResponse) {
 						        document.cookie = FBappId+'='+response.authResponse.userID;
 						        document.cookie = FBaccessToken+'='+response.authResponse.accessToken;
+
 						        window.location.href = destino;
 						    }
 						    

@@ -44,7 +44,7 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 						        window.location.href = destino;
 						    }
 						    
-						}, {scope: 'user_photos, publish_actions'}); 
+						}, {scope: 'user_photos'});  //publish_actions
 
 			      	}
 			};

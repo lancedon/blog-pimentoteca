@@ -21,6 +21,8 @@ include 'class/class_game.php';
 $obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, 1);
 $obj->play();
 
+echo $obj->fbid."<<<<";
+
 if(!$obj->fbid){
 	header('Location: http://'.$_SERVER['HTTP_HOST'].$origem);
 	exit(0);

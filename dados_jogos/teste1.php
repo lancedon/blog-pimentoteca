@@ -19,7 +19,7 @@ $desc = 'Descrição aqui';
 
 include 'class/class_game.php';
 
-$obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, 1);
+$obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, 0);
 $obj->play();
 
 //echo $obj->fbid."<<<<";

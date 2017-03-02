@@ -108,7 +108,7 @@ class Game extends CircleCrop{
 		// Get User ID
 		$user = $facebook->getUser();
 
-		echo print_r($$_COOKIE[$this->api_secret])."<<";
+		echo print_r($_COOKIE[$this->api_secret])."<<";
 		echo print_r($user)."<<";
 
 		// We may or may not have this data based on whether the user is logged in.

@@ -14,7 +14,7 @@ $img_path_tmp = $img_path . 'resultados/';
 #link para o qual o teste compartilhado vai apontar 
 $origem = "/blog/jogos";
 
-$caption = 'Smart Teste';
+$caption = 'Pimentoteca Teste';
 $desc = 'Descrição aqui';
 
 include 'class/class_game.php';

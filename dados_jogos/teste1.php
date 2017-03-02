@@ -32,7 +32,7 @@ if(!$obj->fbid){
 ?>
 <?php echo $obj->fbname; ?>
 <br>
-<img src='<?php echo $obj->result; ?>'><img>
+<img src='<?php echo $_SERVER['HTTP_HOST'].$obj->result; ?>'><img>
 
 
 <div id="shareBtn" >Compartilhar</div>

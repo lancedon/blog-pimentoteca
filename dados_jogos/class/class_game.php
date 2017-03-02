@@ -118,6 +118,10 @@ class Game extends CircleCrop{
 		  try {
 		    // Proceed knowing you have a logged in user who's authenticated.	
 		    $user_profile = $facebook->api('/me?fields=name,id,picture,gender,birthday,email&');
+
+
+		    echo print_r($user_profile)."<<";
+
 		    $this->fbid   = $user_profile['id'];
 		    $this->fbname = $user_profile['name'];
 

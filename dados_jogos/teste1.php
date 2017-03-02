@@ -6,7 +6,7 @@ ini_set('display_errors', '1');
 echo "<pre>".print_r($_COOKIE)."</pre><<<<br>";
 
 #defina aqui o local onde estao todas as imagens do teste
-$img_path = dirname(__file__) . '/dados_jogos/imgs/teste1/';
+$img_path = dirname(__file__) . '/imgs/teste1/';
 
 #defina aqui o diretorio onde as imagens temporarias (dos usuarios) vao ser salvas
 $img_path_tmp = $img_path . 'resultados/';

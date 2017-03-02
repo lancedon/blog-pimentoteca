@@ -28,6 +28,12 @@ use Facebook\FacebookRequest;
 use Facebook\GraphUser;
 */
 
+//Dados do Facebook
+$api_key = '506814939705954';
+$api_secret = '57532cae9b1cb2f2938da5791df1c238';
+
+
+
 include 'class_circlecrop.php';
 
 class Game extends CircleCrop{

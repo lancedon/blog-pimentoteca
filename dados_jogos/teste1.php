@@ -30,6 +30,11 @@ if(!$obj->fbid){
 }
 
 ?>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/blog/dados_jogos/js/face.js"></script>
+
 <?php echo $obj->fbname; ?>
 <br>
 
@@ -42,17 +47,5 @@ if(!$obj->fbid){
 </br>
 
 
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'feed', 
-    name: 'Facebook Dialogs', 
-    link: 'http://<?php echo $_SERVER['HTTP_HOST'].$origem; ?>', 
-    picture: 'http://<?php echo $_SERVER['HTTP_HOST'].substr($obj->result, 0, strpos($obj->result, '?')); ?>', 
-    caption: '<?php echo $caption; ?>', 
-    description: '<?php echo $desc; ?>' 
-  }, function(response){});
-}
-</script>
 <br>
 <a href="javascript: location.reload();" >Refazer </a></br>							          

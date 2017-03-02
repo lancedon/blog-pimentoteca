@@ -31,9 +31,9 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 
 			 		console.log(FB_status);
 			 		if (FB_status === "connected"){
-			 			
-			 				console.log(document.cookie);
-			 				alert(document.cookie);
+
+			 				//console.log(document.cookie);
+			 				//alert(document.cookie);
 
 			 				 window.location.href=destino;
 

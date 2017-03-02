@@ -291,8 +291,8 @@ class Game extends CircleCrop{
 				$this->crop();	
 				$merge = $this->display();
 
-				$smallwidth = imagesx($merge)*2;
-				$smallheight = imagesy($merge)*2;
+				$smallwidth = imagesx($merge);
+				$smallheight = imagesy($merge);
 
 				$ajuste = 25;
 

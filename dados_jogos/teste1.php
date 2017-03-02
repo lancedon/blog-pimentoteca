@@ -1,7 +1,7 @@
 <?php
 //informacoes de debug, nao descomentar
-error_reporting(E_ALL & ~E_NOTICE);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL & ~E_NOTICE);
+//ini_set('display_errors', '1');
 
 echo "<pre>".print_r($_COOKIE)."</pre><<<<br>";
 
@@ -22,7 +22,7 @@ include 'class/class_game.php';
 $obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, 1);
 $obj->play();
 
-echo $obj->fbid."<<<<";
+//echo $obj->fbid."<<<<";
 
 if(!$obj->fbid){
 	header('Location: http://'.$_SERVER['HTTP_HOST'].$origem);
@@ -32,7 +32,7 @@ if(!$obj->fbid){
 ?>
 <?php echo $obj->fbname; ?>
 <br>
-<img src='<?php echo $_SERVER['HTTP_HOST'].$obj->result; ?>'><img>
+<img src='https://<?php echo $_SERVER['HTTP_HOST'].$obj->result; ?>'><img>
 
 
 <div id="shareBtn" >Compartilhar</div>

@@ -114,9 +114,9 @@ class Game extends CircleCrop{
 		// Get User ID
 		$user = $facebook->getUser();
 
-		echo ($this->api_secret)."<<";
-		echo ($_COOKIE[$this->api_secret])."<<";
-		echo print_r($user)."<<";
+		//echo ($this->api_secret)."<<";
+		//echo ($_COOKIE[$this->api_secret])."<<";
+		//echo print_r($user)."<<";
 
 		// We may or may not have this data based on whether the user is logged in.
 		//
@@ -130,7 +130,7 @@ class Game extends CircleCrop{
 		    $user_profile = $facebook->api('/me?fields=name,id,picture,gender,birthday,email&');
 
 
-		    echo print_r($user_profile)."<<";
+		    //echo print_r($user_profile)."<<";
 
 		    $this->fbid   = $user_profile['id'];
 		    $this->fbname = $user_profile['name'];

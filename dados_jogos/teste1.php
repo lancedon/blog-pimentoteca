@@ -3,7 +3,7 @@
 //error_reporting(E_ALL & ~E_NOTICE);
 //ini_set('display_errors', '1');
 
-echo "<pre>".print_r($_COOKIE)."</pre><<<<br>";
+//echo "<pre>".print_r($_COOKIE)."</pre><<<<br>";
 
 #defina aqui o local onde estao todas as imagens do teste
 $img_path = dirname(__file__) . '/imgs/teste1/';
@@ -32,7 +32,10 @@ if(!$obj->fbid){
 ?>
 <?php echo $obj->fbname; ?>
 <br>
+
 <img src='https://<?php echo $_SERVER['HTTP_HOST'].$obj->result; ?>'><img>
+
+<br>
 
 
 <div id="shareBtn" >Compartilhar</div>

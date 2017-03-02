@@ -21,8 +21,8 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 			    console.log(response);
 			    if (FB_status === "connected"){
 
-			    	document.cookie = FBappId+'='+response.authResponse.userID;
-					document.cookie = FBaccessToken+'='+response.authResponse.accessToken;
+			    	document.cookie = FBappId+'='+response.authResponse.userID+"; path=/";
+					document.cookie = FBaccessToken+'='+response.authResponse.accessToken+"; path=/";
 
 			    }
 			});    
@@ -42,8 +42,8 @@ const FBaccessToken = '57532cae9b1cb2f2938da5791df1c238';
 						 FB.login( function(response){
 							
 						    if (response.authResponse) {
-						        document.cookie = FBappId+'='+response.authResponse.userID;
-						        document.cookie = FBaccessToken+'='+response.authResponse.accessToken;
+						        document.cookie = FBappId+'='+response.authResponse.userID+"; path=/";
+						        document.cookie = FBaccessToken+'='+response.authResponse.accessToken+"; path=/";
 
 						        window.location.href = destino;
 						    }

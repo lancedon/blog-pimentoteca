@@ -35,18 +35,6 @@ if(!$obj->fbid){
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <script src="/blog/dados_jogos/js/face.js"></script>
 
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'feed', 
-    name: 'Facebook Dialogs', 
-    link: 'http://<?php echo $_SERVER['HTTP_HOST'].$origem; ?>', 
-    picture: 'http://<?php echo $_SERVER['HTTP_HOST'].substr($obj->result, 0, strpos($obj->result, '?')); ?>', 
-    caption: '<?php echo $caption; ?>', 
-    description: '<?php echo $desc; ?>' 
-  }, function(response){});
-}
-</script>
 
 <?php echo $obj->fbname; ?>
 <br>
@@ -62,3 +50,17 @@ document.getElementById('shareBtn').onclick = function() {
 
 <br>
 <a href="javascript: location.reload();" >Refazer </a></br>							          
+
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'feed', 
+    name: 'Facebook Dialogs', 
+    link: 'http://<?php echo $_SERVER['HTTP_HOST'].$origem; ?>', 
+    picture: 'http://<?php echo $_SERVER['HTTP_HOST'].substr($obj->result, 0, strpos($obj->result, '?')); ?>', 
+    caption: '<?php echo $caption; ?>', 
+    description: '<?php echo $desc; ?>' 
+  }, function(response){});
+}
+</script>

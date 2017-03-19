@@ -22,9 +22,9 @@ include 'class/class_game.php';
 $settings = array(
   "type" => 0,
   "name" => array(
-                  "x" => "100",
-                  "y" => "100",
-                  "size" => "40",
+                  "x" => 100,
+                  "y" => 100,
+                  "size" => 40,
                   "color" => array("red"   => "FF",
                                    "green" => "FF",
                                    "blue"  => "FF"))

@@ -222,6 +222,16 @@ class Game extends CircleCrop{
 							 $this->settings->name->y, 
 							 $this->fbname, 
 							 $color );
+
+
+				imagestring( $large,
+							 10,
+							 50, 
+							 50, 
+							 $this->fbname, 
+							 $color );
+
+
 				break;
 		}
 

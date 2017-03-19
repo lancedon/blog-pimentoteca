@@ -23,7 +23,7 @@ $settings = array(
   "type" => 0,
   "name" => array(
                   "x" => 70,
-                  "y" => 250,
+                  "y" => 235,
                   "size" => 30,
                   "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
                   "color" => array("red"   => 255,

@@ -8,6 +8,8 @@ wp-content/cache/
 *.bak
 /vendor
 /jogos/avatar/*
+/dados_jogos/*
+/dados_jogos
 
 # Do not ignore plugins dir, but ignore everything inside
 !/wp-content/plugins

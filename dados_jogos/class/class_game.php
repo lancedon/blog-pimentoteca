@@ -194,7 +194,7 @@ class Game extends CircleCrop{
 			
 				$large = $this->insert_profile_img($small, $large, $merge);
 
-				echo "<pre>".var_dump($this->settings)."</pre><br>";
+				//echo "<pre>".var_dump($this->settings)."</pre><br>";
 
 				/* @Parametros
 				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
@@ -204,9 +204,10 @@ class Game extends CircleCrop{
 				 * -- No caso acima é branco
 				 */
 				$color = imagecolorallocate( $large,
-										   $this->settings->name->color->red, 
-										   $this->settings->name->color->green,
-										   $this->settings->name->color->blue);
+										   $this->settings["name"]["color"]["red"],
+										   $this->settings["name"]["color"]["green"],
+										   $this->settings["name"]["color"]["blue"]
+										   );
 
 				/* @Parametros
 				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
@@ -217,21 +218,12 @@ class Game extends CircleCrop{
 				 * $cor - Cor criada pelo imagecolorallocate
 				 */
 				imagestring( $large,
-							 $this->settings->name->size, 
-							 $this->settings->name->x, 
-							 $this->settings->name->y, 
+							 $this->settings["name"]["size"], 
+							 $this->settings["name"]["x"], 
+							 $this->settings["name"]["y"], 
 							 $this->fbname, 
 							 $color );
 
-
-				imagestring( $large,
-							 10,
-							 50, 
-							 50, 
-							 $this->fbname, 
-							 $color );
-
-echo ">>>>>".$this->settings["name"]["size"]."<<<<<<<<";
 				break;
 		}
 

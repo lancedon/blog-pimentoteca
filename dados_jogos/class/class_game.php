@@ -194,7 +194,7 @@ class Game extends CircleCrop{
 			
 				$large = $this->insert_profile_img($small, $large, $merge);
 
-				echo var_dump($this->settings);
+				echo "<pre>".var_dump($this->settings)."</pre><br>";
 
 				/* @Parametros
 				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg

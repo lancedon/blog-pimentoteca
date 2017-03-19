@@ -186,6 +186,32 @@ class Game extends CircleCrop{
 		$smallwidth = imagesx($small);
 		$smallheight = imagesy($small);
 
+
+
+		$this->insert_profile_img();
+
+
+
+		//write img on file (real path)
+		$this->result = $this->img_path_tmp.$this->fbid.'.jpg';
+		imagejpeg($large, $this->result);
+
+		
+		//get url for web relative path
+		//$this->result = getcwd() . $this->img_path_tmp.$this->fbid.'.jpg';
+		$this->result = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->result . '?' . filemtime($this->img_path_tmp.$this->fbid.'.jpg'));
+
+		//echo $this->img_path_tmp.$this->fbid.'.jpg <br>'.$_SERVER['DOCUMENT_ROOT'];
+		//echo '<br>'.$this->result;
+
+		//free memory
+		imagedestroy($small);
+		imagedestroy($large);
+
+    }
+
+    private function insert_profile_img(){
+
 		//verifica se já existe as coordenadas do blank
 		if(!file_exists($this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json')){
 
@@ -305,23 +331,6 @@ class Game extends CircleCrop{
 
 		}//if do coordenadas
 
-
-
-		//write img on file (real path)
-		$this->result = $this->img_path_tmp.$this->fbid.'.jpg';
-		imagejpeg($large, $this->result);
-
-		
-		//get url for web relative path
-		//$this->result = getcwd() . $this->img_path_tmp.$this->fbid.'.jpg';
-		$this->result = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->result . '?' . filemtime($this->img_path_tmp.$this->fbid.'.jpg'));
-
-		//echo $this->img_path_tmp.$this->fbid.'.jpg <br>'.$_SERVER['DOCUMENT_ROOT'];
-		//echo '<br>'.$this->result;
-
-		//free memory
-		imagedestroy($small);
-		imagedestroy($large);
 
     }
 

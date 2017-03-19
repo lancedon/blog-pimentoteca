@@ -22,12 +22,12 @@ include 'class/class_game.php';
 $settings = array(
   "type" => 0,
   "name" => array(
-                  "x" => 200,
-                  "y" => 100,
-                  "size" => 60,
-                  "color" => array("red"   => "FF",
-                                   "green" => "FF",
-                                   "blue"  => "FF"))
+                  "x" => 100,
+                  "y" => 200,
+                  "size" => 80,
+                  "color" => array("red"   => FF,
+                                   "green" => FF,
+                                   "blue"  => FF))
   );
 
 

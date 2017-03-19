@@ -217,12 +217,17 @@ class Game extends CircleCrop{
 				 * $nome - Texto que será escrito
 				 * $cor - Cor criada pelo imagecolorallocate
 				 */
-				imagestring( $large,
+				imagettftext( $large,
 							 $this->settings["name"]["size"], 
+							 0,
 							 $this->settings["name"]["x"], 
 							 $this->settings["name"]["y"], 
+							 $color,
+							 'arial.ttf',
 							 $this->fbname, 
-							 $color );
+							  );
+
+					// imagettftext($im, 36, 0, 10, 20, $textColor, $font, $string);
 
 				break;
 		}

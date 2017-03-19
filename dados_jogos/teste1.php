@@ -20,7 +20,7 @@ $desc = 'Descrição aqui';
 include 'class/class_game.php';
 
 $settings = array(
-  "type" => "0",
+  "type" => 0,
   "name" => array(
                   "x" => "0",
                   "y" => "0",

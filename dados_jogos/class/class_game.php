@@ -180,7 +180,7 @@ class Game extends CircleCrop{
 
 
 		switch ($this->settings->type) {
-			case '0':
+			case 0:
 				
 				//grava imagem do profile do usuario na pasta
 				$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
@@ -222,11 +222,6 @@ class Game extends CircleCrop{
 							 $color );
 				break;
 		}
-
-		
-
-
-
 
 		//write img on file (real path)
 		$this->result = $this->img_path_tmp.$this->fbid.'.jpg';

@@ -24,7 +24,7 @@ $settings = array(
   "name" => array(
                   "x" => 70,
                   "y" => 200,
-                  "size" => 100,
+                  "size" => 5, //1 a 5
                   "color" => array("red"   => 255,
                                    "green" => 255,
                                    "blue"  => 255))

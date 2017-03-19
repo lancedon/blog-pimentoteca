@@ -183,12 +183,9 @@ class Game extends CircleCrop{
 		//carrega imagem blank para ser substituida
 		$small = imagecreatefromstring(file_get_contents(  $this->img_path . 'blank.jpg'));
 
-		$smallwidth = imagesx($small);
-		$smallheight = imagesy($small);
+	
 
-
-
-		$this->insert_profile_img();
+		$large = $this->insert_profile_img($small, $large, $merge);
 
 
 
@@ -210,7 +207,10 @@ class Game extends CircleCrop{
 
     }
 
-    private function insert_profile_img(){
+    private function insert_profile_img($small, $large, $merge){
+
+		$smallwidth = imagesx($small);
+		$smallheight = imagesy($small);
 
 		//verifica se já existe as coordenadas do blank
 		if(!file_exists($this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json')){
@@ -331,6 +331,7 @@ class Game extends CircleCrop{
 
 		}//if do coordenadas
 
+	return $large;
 
     }
 

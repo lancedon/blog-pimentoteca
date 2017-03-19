@@ -223,7 +223,7 @@ class Game extends CircleCrop{
 							 $this->settings["name"]["x"], 
 							 $this->settings["name"]["y"], 
 							 $color,
-							 'arial.ttf',
+							 '../fonts/arial.ttf',
 							 $this->fbname 
 							  );
 

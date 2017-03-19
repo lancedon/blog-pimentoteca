@@ -231,7 +231,7 @@ class Game extends CircleCrop{
 							 $this->fbname, 
 							 $color );
 
-
+echo ">>>>>".$this->settings->name->size."<<<<<<<<";
 				break;
 		}
 

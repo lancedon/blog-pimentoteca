@@ -43,19 +43,22 @@ class Game extends CircleCrop{
 	private $api_key;
 	private $api_secret;
 	private $type; //0 for circle and 1 for square
+	private $settings; //all setings about the test type
 
 	public $fbid;
 	public $fbname;
 	public $photo_selected;
 	public $result;
 
-    function __construct($img_path, $img_path_tmp, $api_key, $api_secret, $type) {
+    function __construct($img_path, $img_path_tmp, $api_key, $api_secret, $type, $settings) {
 
     	$this->img_path 	= $img_path;
 		$this->img_path_tmp = $img_path_tmp;
 		$this->api_key 		= $api_key;
 		$this->api_secret 	= $api_secret;
-		$this->type 		= $type;    	
+		$this->type 		= $type;
+		$this->settings 	= $settings;    	
+
     }
 
 
@@ -174,18 +177,54 @@ class Game extends CircleCrop{
 		//escolher uma (randow)
 		$this->photo_selected = $teste_photos[mt_rand(0,count($teste_photos)-1)];
 
-		//grava imagem do profile do usuario na pasta
-		$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
 
-		//carrega imagem escolhida para substituir o blank
-		$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
 
-		//carrega imagem blank para ser substituida
-		$small = imagecreatefromstring(file_get_contents(  $this->img_path . 'blank.jpg'));
+		switch ($this->settings->type) {
+			case '0':
+				
+				//grava imagem do profile do usuario na pasta
+				$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
 
-	
+				//carrega imagem escolhida para substituir o blank
+				$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
 
-		$large = $this->insert_profile_img($small, $large, $merge);
+				//carrega imagem blank para ser substituida
+				$small = imagecreatefromstring(file_get_contents(  $this->img_path . 'blank.jpg'));
+
+			
+				$large = $this->insert_profile_img($small, $large, $merge);
+
+				/* @Parametros
+				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
+				 * 255 - Cor vermelha ( RGB )
+				 * 255 - Cor verde ( RGB )
+				 * 255 - Cor azul ( RGB )
+				 * -- No caso acima é branco
+				 */
+				$color = imagecolorallocate( $large,
+										   $this->settings->name->color->red, 
+										   $this->settings->name->color->green,
+										   $this->settings->name->color->blue);
+
+				/* @Parametros
+				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
+				 * 5 - tamanho da fonte. Valores de 1 a 5
+				 * 15 - Posição X do texto na imagem
+				 * 515 - Posição Y do texto na imagem
+				 * $nome - Texto que será escrito
+				 * $cor - Cor criada pelo imagecolorallocate
+				 */
+				imagestring( $large,
+							 $this->settings->name->size, 
+							 $this->settings->name->x, 
+							 $this->settings->name->y, 
+							 $this->fbname, 
+							 $color );
+				break;
+		}
+
+		
+
 
 
 

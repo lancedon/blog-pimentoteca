@@ -23,11 +23,11 @@ $settings = array(
   "type" => 0,
   "name" => array(
                   "x" => 200,
-                  "y" => 200,
-                  "size" => 30,
-                  "color" => array("red"   => "00",
-                                   "green" => "00",
-                                   "blue"  => "00"))
+                  "y" => 100,
+                  "size" => 60,
+                  "color" => array("red"   => "FF",
+                                   "green" => "FF",
+                                   "blue"  => "FF"))
   );
 
 

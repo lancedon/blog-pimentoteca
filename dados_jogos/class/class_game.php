@@ -174,10 +174,10 @@ class Game extends CircleCrop{
 
 		    		foreach($posts['data'] as $likesData){
 			               
-			         		//echo '<pre>';
-			                //echo print_r($likesData,true);
-			                //echo '</pre>';
-			                echo print_r($likesData['id'],true);
+			         		echo '<pre>';
+			                echo print_r($likesData,true);
+			                echo '</pre>';
+			                //echo print_r($likesData['id'],true);
 
 			                $teste = $facebook->api('/'.$likesData['id'].'?fields=likes.summary(true),comments.summary(true),shares');
 

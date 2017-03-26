@@ -18,7 +18,7 @@ $caption = 'Pimentoteca Teste';
 $desc = 'Descrição aqui';
 
 include 'class/class_game.php';
-
+/*
 $settings = array(
   "type" => 0,
   "name" => array(
@@ -28,11 +28,49 @@ $settings = array(
                   "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
                   "color" => array("red"   => 255,
                                    "green" => 255,
-                                   "blue"  => 255))
+                                   "blue"  => 255)
+                 ),
+  "img" => array(
+                  "resize" => "1",
+                  "new_size" => array(
+                                     'newwidth' => 200,
+                                     'newheight' => 200
+                                      ),
+                  "circle" => 1,
+                  "find_pos" => 0,
+                  "x" => 50,
+                  "y" => 100
+                )
+  );
+*/
+
+$settings = array(
+  "type" => 1,
+  "name" => array(
+                  "x" => 70,
+                  "y" => 235,
+                  "size" => 30,
+                  "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
+                  "color" => array("red"   => 255,
+                                   "green" => 255,
+                                   "blue"  => 255)
+                 ),
+  "img" => array(
+                  "resize" => "1",
+                  "new_size" => array(
+                                     'newwidth' => 200,
+                                     'newheight' => 200
+                                      ),
+                  "circle" => 1,
+                  "find_pos" => 0,
+                  "x" => 50,
+                  "y" => 100
+                )
   );
 
 
-$obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, 1, $settings);
+
+$obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, $settings);
 $obj->play();
 
 //echo $obj->fbid."<<<<";

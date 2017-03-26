@@ -42,7 +42,6 @@ class Game extends CircleCrop{
 	private $img_path_tmp;
 	private $api_key;
 	private $api_secret;
-	private $type; //0 for circle and 1 for square
 	private $settings; //all setings about the test type
 
 	public $fbid;
@@ -50,13 +49,12 @@ class Game extends CircleCrop{
 	public $photo_selected;
 	public $result;
 
-    function __construct($img_path, $img_path_tmp, $api_key, $api_secret, $type, $settings) {
+    function __construct($img_path, $img_path_tmp, $api_key, $api_secret, $settings) {
 
     	$this->img_path 	= $img_path;
 		$this->img_path_tmp = $img_path_tmp;
 		$this->api_key 		= $api_key;
 		$this->api_secret 	= $api_secret;
-		$this->type 		= $type;
 		$this->settings 	= $settings;    	
 
     }
@@ -138,11 +136,80 @@ class Game extends CircleCrop{
 		    $this->fbid   = $user_profile['id'];
 		    $this->fbname = $user_profile['name'];
 
+
+		    switch ($this->settings["type"]) {
+
+		    	case 1:
+
+		    		echo "aqui";
+
+		    		
+					//$friends = $facebook->api('/me/friends');
+		    		//echo var_dump($friends);
+
+		    		//$friends = $facebook->api('/me/feed');
+		    		/*
+		    		$friends = $facebook->api('/me/taggable_friends?fields=id,name,picture,gender&limit=50');
+		    		
+		    		foreach($friends as $likesData){
+			               
+			                $frid = $likesData['id']; 
+			                $frname = $likesData['name']; 
+			                $fr = $likesData['is_silhouette']; 
+			                $friendArray[$frid] = $frname;
+							
+
+
+			                echo $frname."<br>".$fr."<<";
+			            }
+
+		    		echo var_dump($friends);
+					*/
+
+					$friends = $facebook->api('/me/feed&limit=50');
+		    		
+		    		foreach($friends as $likesData){
+			               
+			                echo var_dump($likesData);
+			            }
+
+		    		//echo var_dump($friends);
+
+
+			    	//echo var_dump($friends["data"][0]);
+/*
+		    		$statuses = $facebook->api('/me/statuses');
+
+				    foreach($statuses['data'] as $status){
+				    // processing likes array for calculating fanbase. 
+
+			            foreach($status['likes']['data'] as $likesData){
+			                $frid = $likesData['id']; 
+			                $frname = $likesData['name']; 
+			                $friendArray[$frid] = $frname;
+
+			                echo $frname."<br>";
+			            }
+
+				         foreach($status['comments']['data'] as $comArray){
+				         // processing comments array for calculating fanbase
+				                    $frid = $comArray['from']['id'];
+				                    $frname = $comArray['from']['name'];
+				                    echo $frname;
+					    }
+					    echo "<br>--------<br>";
+					}
+*/
+			    	break;
+			
+		    }
+
+
 		  } catch (FacebookApiException $e) {
 		    error_log($e);
 		    $user = null;
 		  }
-		}
+		}	
 			
 		$this->load_img();
 
@@ -177,24 +244,58 @@ class Game extends CircleCrop{
 		//escolher uma (randow)
 		$this->photo_selected = $teste_photos[mt_rand(0,count($teste_photos)-1)];
 
-
-
-		switch ($this->settings->type) {
+		switch ($this->settings["type"]) {
 			case 0:
+			case 1:
 				
-				//grava imagem do profile do usuario na pasta
-				$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
+				if($this->settings["img"]["resize"]){
+
+					$merge = $this->resize_image($this->img_path_tmp .$this->fbid.'.jpg',
+												 $this->settings["img"]["new_size"]["newwidth"],
+												 $this->settings["img"]["new_size"]["newheight"]
+												 );
+				}else{
+
+					//carrega imagem do profile do usuario
+					$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
+
+				}
 
 				//carrega imagem escolhida para substituir o blank
 				$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
 
 				//carrega imagem blank para ser substituida
 				$small = imagecreatefromstring(file_get_contents(  $this->img_path . 'blank.jpg'));
-
 			
 				$large = $this->insert_profile_img($small, $large, $merge);
 
+				$large = $this->write_name($large);
+
 				//echo "<pre>".var_dump($this->settings)."</pre><br>";
+
+				break;
+		}
+
+		//write img on file (real path)
+		$this->result = $this->img_path_tmp.$this->fbid.'.jpg';
+		imagejpeg($large, $this->result);
+
+		
+		//get url for web relative path
+		//$this->result = getcwd() . $this->img_path_tmp.$this->fbid.'.jpg';
+		$this->result = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->result . '?' . filemtime($this->img_path_tmp.$this->fbid.'.jpg'));
+
+		//echo $this->img_path_tmp.$this->fbid.'.jpg <br>'.$_SERVER['DOCUMENT_ROOT'];
+		//echo '<br>'.$this->result;
+
+		//free memory
+		imagedestroy($small);
+		imagedestroy($large);
+
+    }
+
+    private function write_name($large){
+
 
 				/* @Parametros
 				 * $imagem - Imagem previamente criada Usei imagecreatefromjpeg
@@ -226,24 +327,8 @@ class Game extends CircleCrop{
 							 $this->settings["name"]["font"],
 							 $this->fbname 
 							  );
-				break;
-		}
 
-		//write img on file (real path)
-		$this->result = $this->img_path_tmp.$this->fbid.'.jpg';
-		imagejpeg($large, $this->result);
-
-		
-		//get url for web relative path
-		//$this->result = getcwd() . $this->img_path_tmp.$this->fbid.'.jpg';
-		$this->result = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->result . '?' . filemtime($this->img_path_tmp.$this->fbid.'.jpg'));
-
-		//echo $this->img_path_tmp.$this->fbid.'.jpg <br>'.$_SERVER['DOCUMENT_ROOT'];
-		//echo '<br>'.$this->result;
-
-		//free memory
-		imagedestroy($small);
-		imagedestroy($large);
+				return $large;
 
     }
 
@@ -253,7 +338,7 @@ class Game extends CircleCrop{
 		$smallheight = imagesy($small);
 
 		//verifica se já existe as coordenadas do blank
-		if(!file_exists($this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json')){
+		if(!file_exists($this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json') && $this->settings["img"]["find_pos"]){
 
 			$largewidth = imagesx($large);
 			$largeheight = imagesy($large);
@@ -328,43 +413,55 @@ class Game extends CircleCrop{
 	
 
 			//circle case
-			if($this->type == 0){
+			if($this->settings["img"]["circle"] == 1){
 				$this->load($merge);
 				$this->crop();	
 				$merge = $this->display();
-
-				$smallwidth = imagesx($merge);
-				$smallheight = imagesy($merge);
 
 				$ajuste = 25;
 
 				//$this->display();
 				//exit(1);
 			}
+
+
+			$smallwidth = imagesx($merge);
+			$smallheight = imagesy($merge);
+
 
 			// merge da foto do profile com a escolhida no teste
 			imagecopymerge($large, $merge, $mostLikely["x"]-$ajuste, $mostLikely["y"]-$ajuste, 0, 0, $smallwidth, $smallheight, 100);
 
 		}else{
 
-			$coordenadas = file_get_contents(  $this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json');
+			if($this->settings["img"]["find_pos"] == 0){
 
-			$coordenadas = json_decode($coordenadas);
+				$coordenadas =  json_decode(json_encode($this->settings["img"]));
+
+			}else{
+
+				$coordenadas = file_get_contents(  $this->img_path . substr($this->photo_selected,0,strlen($this->photo_selected)-4) . '.json');
+
+				$coordenadas = json_decode($coordenadas);
+				
+			}
+
 			
 			//circle case
-			if($this->type == 0){
+			if($this->settings["img"]["circle"] == 1){
 				$this->load($merge);
 				$this->crop();	
 				$merge = $this->display();
-
-				$smallwidth = imagesx($merge);
-				$smallheight = imagesy($merge);
 
 				$ajuste = 25;
 
 				//$this->display();
 				//exit(1);
 			}
+
+			$smallwidth = imagesx($merge);
+			$smallheight = imagesy($merge);
+
 
 	   		// merge da foto do profile com a escolhida no teste
 			imagecopymerge($large, $merge, $coordenadas->x - $ajuste, $coordenadas->y - $ajuste, 0, 0, $smallwidth, $smallheight, 100);
@@ -374,6 +471,34 @@ class Game extends CircleCrop{
 	return $large;
 
     }
+
+
+    private function resize_image($file, $w, $h, $crop=FALSE) {
+	    list($width, $height) = getimagesize($file);
+	    $r = $width / $height;
+	    if ($crop) {
+	        if ($width > $height) {
+	            $width = ceil($width-($width*abs($r-$w/$h)));
+	        } else {
+	            $height = ceil($height-($height*abs($r-$w/$h)));
+	        }
+	        $newwidth = $w;
+	        $newheight = $h;
+	    } else {
+	        if ($w/$h > $r) {
+	            $newwidth = $h*$r;
+	            $newheight = $h;
+	        } else {
+	            $newheight = $w/$r;
+	            $newwidth = $w;
+	        }
+	    }
+	    $src = imagecreatefromjpeg($file);
+	    $dst = imagecreatetruecolor($newwidth, $newheight);
+	    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    return $dst;
+}
 
 	private function microtime_float()
 	{

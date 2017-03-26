@@ -259,8 +259,11 @@ class Game extends CircleCrop{
             break;
         }
 
+        $x=0;
         foreach ($sortable_array as $k => $v) {
-            $new_array[$k] = $array[$k];
+
+            $new_array[$x] = $array[$k];
+            $x = $x++;
         }
     }
 

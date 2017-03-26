@@ -380,8 +380,13 @@ class Game extends CircleCrop{
 
 					}else{
 
-						$this->fbid = $this->friends[0]['id'];
-						$this->fbname = $this->friends[0]['name'];
+						$tot_friends = count($this->friends);
+						//$x = mt_rand(1, ($tot_friends > 5 ? 5 : $tot_friends));
+						if($tot_friends >= $k+1)
+							break;
+
+						$this->fbid = $this->friends[$k-1]['id'];
+						$this->fbname = $this->friends[$k-1]['name'];
 
 					}
 

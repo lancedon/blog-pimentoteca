@@ -185,7 +185,7 @@ class Game extends CircleCrop{
 			                foreach($teste['data'] as $testeData){
 		
 		                		echo '<pre>';
-		                		echo print_r($testeData['id'],true);
+		                		echo print_r($testeData,true);
 		                		echo '</pre>';
 			                		
 			                }
@@ -193,7 +193,7 @@ class Game extends CircleCrop{
 			                foreach($teste['data']['from'] as $testeData){
 		
 		                		echo '<pre>';
-		                		echo print_r($testeData['id'],true);
+		                		echo print_r($testeData,true);
 		                		echo '</pre>';
 			                		
 			                }

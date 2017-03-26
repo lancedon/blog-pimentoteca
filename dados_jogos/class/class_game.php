@@ -245,8 +245,8 @@ class Game extends CircleCrop{
     		$this->friends[] = array(
     								'id' => $friend['id'],
     								'name' => $friend['name'],
-    								'sum_like' => (($type == 1) ? 1,0),
-    								'sum_comment' => (($type == 2) ? 1,0),
+    								'sum_like' => (($type == 1) ? 1,0;),
+    								'sum_comment' => (($type == 2) ? 1,0;),
     								'total' => 	1
     								);
 

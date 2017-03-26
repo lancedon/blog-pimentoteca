@@ -149,7 +149,7 @@ class Game extends CircleCrop{
 
 		    		//$friends = $facebook->api('/me/feed');
 		    		
-		    		$friends = $facebook->api('/'.$this->fbid .'/friends?fields=id,name,gender&limit=50');
+		    		$friends = $facebook->api('/me/friends?limit=50');
 		    		
 		    		foreach($friends['data'] as $likesData){
 			               

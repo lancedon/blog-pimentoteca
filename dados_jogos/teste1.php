@@ -44,6 +44,9 @@ $settings = array(
   );
 */
 
+
+echo "aaa";
+
 $settings = array(
   "type" => 1,
   "imgs" => array(
@@ -94,7 +97,7 @@ $settings = array(
                  )
   );
 
-
+echo "bbb";
 
 $obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, $settings);
 $obj->play();

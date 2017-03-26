@@ -188,13 +188,13 @@ class Game extends CircleCrop{
 
 				                	if($post_info_comments_or_likes['from']){
 
-					                	echo '<pre>';
+					                	echo 'Comment: <pre>';
 				                		echo print_r($post_info_comments_or_likes['from'],true);
 				                		echo '</pre>';
 
 				                	}else{
 
-					                	echo '<pre>';
+					                	echo 'Like:<pre>';
 				                		echo print_r($post_info_comments_or_likes,true);
 				                		echo '</pre>';
 

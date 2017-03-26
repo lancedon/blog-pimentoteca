@@ -286,7 +286,7 @@ class Game extends CircleCrop{
 
     	}else{
 
-    		$user_profile = $this->facebook->api('/'.$friend['id'].'?fields=gender');
+    		$user_profile = $this->facebook->api('/'.$friend['id'].'?fields=id,gender');
 
     		echo "<pre>".print_r($user_profile)."</pre>";
 

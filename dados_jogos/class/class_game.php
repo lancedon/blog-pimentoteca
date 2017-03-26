@@ -168,11 +168,12 @@ class Game extends CircleCrop{
 
 					$friends = $facebook->api('/me/posts?limit=50');
 		    		
-					echo var_dump($friends)."----<br>";
+					//echo var_dump($friends)."----<br>";
 
 		    		foreach($friends as $likesData){
 			               
-			                echo var_dump($likesData);
+			         
+			                echo var_dump($likesData['id']);
 			            }
 
 		    		//echo var_dump($friends);

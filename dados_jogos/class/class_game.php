@@ -57,7 +57,8 @@ class Game extends CircleCrop{
 		$this->img_path_tmp = $img_path_tmp;
 		$this->api_key 		= $api_key;
 		$this->api_secret 	= $api_secret;
-		$this->settings 	= $settings;    	
+		$this->settings 	= $settings;    
+		$this->friends		= new array();	
 
     }
 

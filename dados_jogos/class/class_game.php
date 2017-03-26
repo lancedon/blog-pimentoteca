@@ -361,7 +361,7 @@ class Game extends CircleCrop{
 				//order friends
 				$this->friends = $this->arraySort($this->friends,'total');
 
-/*
+
 
 				//carrega imagem escolhida para substituir o blank
 				$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
@@ -423,7 +423,7 @@ class Game extends CircleCrop{
 
 				$this->fbid = $fbid;
 				$this->fbname = $fbname;
-*/
+
 				break;
 
 		}

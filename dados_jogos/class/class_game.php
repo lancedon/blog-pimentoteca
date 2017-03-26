@@ -44,6 +44,7 @@ class Game extends CircleCrop{
 	private $api_secret;
 	private $settings; //all setings about the test type
 	private $friends;
+	private $facebook;
 
 	public $fbid;
 	public $fbname;
@@ -108,15 +109,15 @@ class Game extends CircleCrop{
 		require '/var/www/html/blog/dados_jogos/src/facebook.php';
 
 		// Create our Application instance (replace this with your appId and secret).
-		$facebook = new Facebook(array(
+		$this->facebook = new Facebook(array(
 		  'appId'  => $this->api_key,
 		  'secret' => $this->api_secret
 		));
 
-		$facebook->setAccessToken($_COOKIE[$this->api_secret]);
+		$this->facebook->setAccessToken($_COOKIE[$this->api_secret]);
 
 		// Get User ID
-		$user = $facebook->getUser();
+		$user = $this->facebook->getUser();
 
 		//echo ($this->api_secret)."<<";
 		//echo ($_COOKIE[$this->api_secret])."<<";
@@ -131,7 +132,7 @@ class Game extends CircleCrop{
 		if ($user) {
 		  try {
 		    // Proceed knowing you have a logged in user who's authenticated.	
-		    $user_profile = $facebook->api('/me?fields=name,id,picture,gender,birthday,email&');
+		    $user_profile = $this->facebook->api('/me?fields=name,id,picture,gender,birthday,email&');
 
 
 		    //echo print_r($user_profile)."<<";
@@ -170,7 +171,7 @@ class Game extends CircleCrop{
 		    		echo var_dump($friends);
 					echo '</pre>';
 */
-					$posts = $facebook->api('/me/posts?limit=80');
+					$posts = $this->facebook->api('/me/posts?limit=80');
 		    		
 		    		//echo '<pre>';
 					//echo print_r($friends,true)."----<br>";
@@ -183,7 +184,7 @@ class Game extends CircleCrop{
 			                //echo '</pre>';
 			                //echo print_r($likesData['id'],true);
 
-			                $post_info = $facebook->api('/'.$likesData['id'].'?fields=likes.summary(true),comments.summary(true),shares');
+			                $post_info = $this->facebook->api('/'.$likesData['id'].'?fields=likes.summary(true),comments.summary(true),shares');
 
 			                foreach($post_info as $post_info_Data){
 
@@ -192,16 +193,16 @@ class Game extends CircleCrop{
 
 				                	if($post_info_comments_or_likes['from']){
 
-					                	echo 'Comment: <pre>';
-				                		echo print_r($post_info_comments_or_likes['from'],true);
-				                		echo '</pre>';
+					                	//echo 'Comment: <pre>';
+				                		//echo print_r($post_info_comments_or_likes['from'],true);
+				                		//echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes['from'],2);
 
 				                	}else{
 
-					                	echo 'Like:<pre>';
-				                		echo print_r($post_info_comments_or_likes,true);
-				                		echo '</pre>';
+					                	//echo 'Like:<pre>';
+				                		//echo print_r($post_info_comments_or_likes,true);
+				                		//echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes,1);
 
 				                	}
@@ -284,6 +285,10 @@ class Game extends CircleCrop{
 			$this->friends[$key]['total']++;
 
     	}else{
+
+    		$user_profile = $this->facebook->api('/'.$friend['id'].'?fields=name,id,picture,gender');
+
+    		echo "<pre>".print_r($user_profile)."</pre>";
 
     		$this->friends[] = array(
     								'id' => $friend['id'],

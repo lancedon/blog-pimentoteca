@@ -387,6 +387,7 @@ class Game extends CircleCrop{
 
 
 					$this->settings["img"] = $v["img"];
+					$this->settings["name"] = $v["name"];
 
 					$img_profile = file_get_contents('https://graph.facebook.com/'.$this->fbid.'/picture?type=normal'); //enum{small, normal, album, large, square}
 					$file = $this->img_path_tmp . $this->fbid . '.jpg';
@@ -415,6 +416,7 @@ class Game extends CircleCrop{
 					$large = $this->write_name($large);
 
 					$this->settings["img"] = NULL;
+					$this->settings["name"] = NULL;
 
 					//echo "<pre>".var_dump($this->settings)."</pre><br>";
 

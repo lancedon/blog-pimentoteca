@@ -72,7 +72,7 @@ $settings = array(
                   "1" => array( 
                               "sex" => "M",  
                               "name" => array(
-                                              "x" => 140,
+                                              "x" => 340,
                                               "y" => 235,
                                               "size" => 30,
                                               "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
@@ -88,7 +88,7 @@ $settings = array(
                                                                   ),
                                               "circle" => 1,
                                               "find_pos" => 0,
-                                              "x" => 100,
+                                              "x" => 300,
                                               "y" => 100
                                             )
                            )

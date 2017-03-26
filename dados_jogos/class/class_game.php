@@ -184,20 +184,22 @@ class Game extends CircleCrop{
 			                //if($teste['data'])
 			                foreach($post_info as $post_info_Data){
 
-			                	if($post_info_Data['data']['from']){
+			                	foreach($post_info_Data['data'] as $post_info_comments_or_likes){
 
-				                	echo '<pre>';
-			                		echo print_r($post_info_Data['data']['from'],true);
-			                		echo '</pre>';
+				                	if($post_info_comments_or_likes['from']){
 
-			                	}else{
+					                	echo '<pre>';
+				                		echo print_r($post_info_comments_or_likes['from'],true);
+				                		echo '</pre>';
 
-				                	echo '<pre>';
-			                		echo print_r($post_info_Data['data'],true);
-			                		echo '</pre>';
+				                	}else{
 
-			                	}
-		
+					                	echo '<pre>';
+				                		echo print_r($post_info_comments_or_likes,true);
+				                		echo '</pre>';
+
+				                	}
+								}
 		                		
 			                		
 			                }

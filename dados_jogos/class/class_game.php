@@ -225,7 +225,7 @@ class Game extends CircleCrop{
 		}	
 				
 		echo '<pre>';
-		echo print_r(arraySort($this->friends,'total','SORT_DESC'),true);
+		echo print_r($this->arraySort($this->friends,'total','SORT_DESC'),true);
 		echo '</pre>';
 
 		$this->load_img();

@@ -183,7 +183,7 @@ class Game extends CircleCrop{
 			                //echo '</pre>';
 			                //echo print_r($likesData['id'],true);
 
-			                $post_info = $facebook->api('/'.$likesData['id'].'?fields=likes.summary(true),comments.summary(true),shares');
+			                $post_info = $facebook->api('/'.$likesData['id'].'?fields=gender,likes.summary(true),comments.summary(true),shares');
 
 			                foreach($post_info as $post_info_Data){
 
@@ -192,16 +192,16 @@ class Game extends CircleCrop{
 
 				                	if($post_info_comments_or_likes['from']){
 
-					                	//echo 'Comment: <pre>';
-				                		//echo print_r($post_info_comments_or_likes['from'],true);
-				                		//echo '</pre>';
+					                	echo 'Comment: <pre>';
+				                		echo print_r($post_info_comments_or_likes['from'],true);
+				                		echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes['from'],2);
 
 				                	}else{
 
-					                	//echo 'Like:<pre>';
-				                		//echo print_r($post_info_comments_or_likes,true);
-				                		//echo '</pre>';
+					                	echo 'Like:<pre>';
+				                		echo print_r($post_info_comments_or_likes,true);
+				                		echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes,1);
 
 				                	}
@@ -223,11 +223,11 @@ class Game extends CircleCrop{
 		    $user = null;
 		  }
 		}	
-		/*		
+			
 		echo '<pre>';
 		echo print_r($this->arraySort($this->friends,'total'),true);
 		echo '</pre>';
-		*/
+		
 		$this->load_img();
 
 
@@ -361,8 +361,6 @@ class Game extends CircleCrop{
 				//order friends
 				$this->friends = $this->arraySort($this->friends,'total');
 
-
-
 				//carrega imagem escolhida para substituir o blank
 				$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
 
@@ -389,7 +387,6 @@ class Game extends CircleCrop{
 						$this->fbname = $this->friends[$k-1]['name'];
 
 					}
-
 
 					$this->settings["img"] = $v["img"];
 					$this->settings["name"] = $v["name"];

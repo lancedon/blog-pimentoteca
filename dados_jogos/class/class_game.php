@@ -58,7 +58,7 @@ class Game extends CircleCrop{
 		$this->api_key 		= $api_key;
 		$this->api_secret 	= $api_secret;
 		$this->settings 	= $settings;    
-		$this->friends		=  array();	
+		$this->friends		= array();	
 
     }
 
@@ -178,9 +178,9 @@ class Game extends CircleCrop{
 
 		    		foreach($posts['data'] as $likesData){
 			               
-			         		echo '<pre>';
-			                echo print_r($likesData,true);
-			                echo '</pre>';
+			         		//echo '<pre>';
+			                //echo print_r($likesData,true);
+			                //echo '</pre>';
 			                //echo print_r($likesData['id'],true);
 
 			                $post_info = $facebook->api('/'.$likesData['id'].'?fields=likes.summary(true),comments.summary(true),shares');
@@ -192,16 +192,16 @@ class Game extends CircleCrop{
 
 				                	if($post_info_comments_or_likes['from']){
 
-					                	echo 'Comment: <pre>';
-				                		echo print_r($post_info_comments_or_likes['from'],true);
-				                		echo '</pre>';
+					                	//echo 'Comment: <pre>';
+				                		//echo print_r($post_info_comments_or_likes['from'],true);
+				                		//echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes['from'],2);
 
 				                	}else{
 
-					                	echo 'Like:<pre>';
-				                		echo print_r($post_info_comments_or_likes,true);
-				                		echo '</pre>';
+					                	//echo 'Like:<pre>';
+				                		//echo print_r($post_info_comments_or_likes,true);
+				                		//echo '</pre>';
 				                		$this->AddFriend($post_info_comments_or_likes,1);
 
 				                	}
@@ -223,8 +223,13 @@ class Game extends CircleCrop{
 		    $user = null;
 		  }
 		}	
-			
+				
+		echo '<pre>';
+		echo print_r($this->friends,true);
+		echo '</pre>';
+
 		$this->load_img();
+
 
     }
 
@@ -252,7 +257,7 @@ class Game extends CircleCrop{
     								);
 
     	}
-    	echo print_r($this->friends).'<br> ------- <br>';
+    	//echo print_r($this->friends).'<br> ------- <br>';
     }
 
     private function load_img(){

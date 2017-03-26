@@ -223,11 +223,11 @@ class Game extends CircleCrop{
 		    $user = null;
 		  }
 		}	
-				
+		/*		
 		echo '<pre>';
 		echo print_r($this->arraySort($this->friends,'total'),true);
 		echo '</pre>';
-
+		*/
 		$this->load_img();
 
 
@@ -299,13 +299,7 @@ class Game extends CircleCrop{
 
     private function load_img(){
 
-		$img_profile = file_get_contents('https://graph.facebook.com/'.$this->fbid.'/picture?type=normal'); //enum{small, normal, album, large, square}
-		$file = $this->img_path_tmp . $this->fbid . '.jpg';
-
-		file_put_contents($file, $img_profile);
-
-
-
+		
 		//pegar todas as imagens do diretorio $img_path 
 		$dir = opendir($this->img_path);
 		if ($dir) {
@@ -328,8 +322,13 @@ class Game extends CircleCrop{
 
 		switch ($this->settings["type"]) {
 			case 0:
-			case 1:
 				
+				$img_profile = file_get_contents('https://graph.facebook.com/'.$this->fbid.'/picture?type=normal'); //enum{small, normal, album, large, square}
+				$file = $this->img_path_tmp . $this->fbid . '.jpg';
+
+				file_put_contents($file, $img_profile);
+
+
 				if($this->settings["img"]["resize"]){
 
 					$merge = $this->resize_image($this->img_path_tmp .$this->fbid.'.jpg',
@@ -356,6 +355,75 @@ class Game extends CircleCrop{
 				//echo "<pre>".var_dump($this->settings)."</pre><br>";
 
 				break;
+
+			case 1:
+				
+				//order friends
+				$this->friends = $this->arraySort($this->friends,'total');
+
+
+				//carrega imagem escolhida para substituir o blank
+				$large = imagecreatefromstring(file_get_contents(  $this->img_path . $this->photo_selected));
+
+
+				$fbid = $this->fbid;
+				$fbname = $this->fbname;
+
+				foreach ($this->settings["imgs"] as $k => $v){	
+
+					//imgs = 0 is the person who doing the test
+					if($k==0){	
+						
+						$this->fbid = $fbid;
+						$this->fbname = $fbname;
+
+					}else{
+
+						$this->fbid = $this->friends[0]['id'];
+						$this->fbname = $this->friends[0]['name'];
+
+					}
+
+
+					$this->settings["img"] = $v["img"];
+
+					$img_profile = file_get_contents('https://graph.facebook.com/'.$this->fbid.'/picture?type=normal'); //enum{small, normal, album, large, square}
+					$file = $this->img_path_tmp . $this->fbid . '.jpg';
+
+					file_put_contents($file, $img_profile);
+
+
+					if($this->settings["img"]["resize"]){
+
+						$merge = $this->resize_image($this->img_path_tmp .$this->fbid.'.jpg',
+													 $this->settings["img"]["new_size"]["newwidth"],
+													 $this->settings["img"]["new_size"]["newheight"]
+													 );
+					}else{
+
+						//carrega imagem do profile do usuario
+						$merge = imagecreatefromstring(file_get_contents(  $this->img_path_tmp .$this->fbid.'.jpg' ));
+
+					}
+
+					//carrega imagem blank para ser substituida
+					$small = imagecreatefromstring(file_get_contents(  $this->img_path . 'blank.jpg'));
+				
+					$large = $this->insert_profile_img($small, $large, $merge);
+
+					$large = $this->write_name($large);
+
+					$this->settings["img"] = NULL;
+
+					//echo "<pre>".var_dump($this->settings)."</pre><br>";
+				}	
+
+
+				$this->fbid = $fbid;
+				$this->fbname = $fbname;
+
+				break;
+
 		}
 
 		//write img on file (real path)

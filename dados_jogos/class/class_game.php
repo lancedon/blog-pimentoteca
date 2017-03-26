@@ -233,7 +233,7 @@ class Game extends CircleCrop{
 
     }
 
-    private function arraySort($array, $on, $order=SORT_ASC){
+    private function arraySort($array, $on, $order=SORT_DESC){
     $new_array = array();
     $sortable_array = array();
 

@@ -151,7 +151,7 @@ class Game extends CircleCrop{
 		    		
 		    		$friends = $facebook->api('/me/taggable_friends?fields=id,name,gender&limit=50');
 		    		
-		    		foreach($friends as $likesData){
+		    		foreach($friends['data'] as $likesData){
 			               
 			                $frid = $likesData['id']; 
 			                $frname = $likesData['name']; 
@@ -163,8 +163,9 @@ class Game extends CircleCrop{
 			                echo $frname." - ".$frid." - ".$fr."<br>";
 			            }
 
+			            echo '<pre>';
 		    		echo var_dump($friends);
-					
+					echo '</pre>';
 
 					$posts = $facebook->api('/me/posts?limit=50');
 		    		

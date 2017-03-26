@@ -173,7 +173,7 @@ class Game extends CircleCrop{
 		    		foreach($friends as $likesData){
 			               
 			         
-			                echo var_dump($likesData->id);
+			                echo var_dump($likesData['data']['id']);
 			            }
 
 		    		//echo var_dump($friends);

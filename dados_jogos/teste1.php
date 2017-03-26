@@ -18,7 +18,7 @@ $caption = 'Pimentoteca Teste';
 $desc = 'Descrição aqui';
 
 include 'class/class_game.php';
-
+/*
 $settings = array(
   "type" => 0,
   "name" => array(
@@ -42,12 +42,12 @@ $settings = array(
                   "y" => 100
                 )
   );
+*/
 
-/*
 $settings = array(
   "type" => 1,
   "imgs" => array(
-                  0 => array(  
+                  "0" => array(  
                     "name" => array(
                                     "x" => 70,
                                     "y" => 235,
@@ -69,7 +69,7 @@ $settings = array(
                                     "y" => 100
                                   )
                   ),
-                  1 => array( 
+                  "1" => array( 
                     "sex" => "M",  
                     "name" => array(
                                     "x" => 140,
@@ -93,7 +93,7 @@ $settings = array(
                                   )
                  )
   );
-*/
+
 
 
 $obj = new Game($img_path, $img_path_tmp, $api_key, $api_secret, $settings);

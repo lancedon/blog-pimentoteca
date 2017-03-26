@@ -51,50 +51,51 @@ $settings = array(
   "type" => 1,
   "imgs" => array(
                   "0" => array(  
-                    "name" => array(
-                                    "x" => 70,
-                                    "y" => 235,
-                                    "size" => 30,
-                                    "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
-                                    "color" => array("red"   => 255,
-                                                     "green" => 255,
-                                                     "blue"  => 255)
-                                   ),
-                    "img" => array(
-                                    "resize" => "1",
-                                    "new_size" => array(
-                                                       'newwidth' => 200,
-                                                       'newheight' => 200
-                                                        ),
-                                    "circle" => 1,
-                                    "find_pos" => 0,
-                                    "x" => 50,
-                                    "y" => 100
-                                  )
-                  ),
+                              "name" => array(
+                                              "x" => 70,
+                                              "y" => 235,
+                                              "size" => 30,
+                                              "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
+                                              "color" => array("red"   => 255,
+                                                               "green" => 255,
+                                                               "blue"  => 255)
+                                             ),
+                              "img" => array(
+                                              "resize" => "1",
+                                              "new_size" => array(
+                                                                 'newwidth' => 200,
+                                                                 'newheight' => 200
+                                                                  ),
+                                              "circle" => 1,
+                                              "find_pos" => 0,
+                                              "x" => 50,
+                                              "y" => 100
+                                            )
+                            ),
                   "1" => array( 
-                    "sex" => "M",  
-                    "name" => array(
-                                    "x" => 140,
-                                    "y" => 235,
-                                    "size" => 30,
-                                    "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
-                                    "color" => array("red"   => 255,
-                                                     "green" => 255,
-                                                     "blue"  => 255)
-                                   ),
-                    "img" => array(
-                                    "resize" => "1",
-                                    "new_size" => array(
-                                                       'newwidth' => 200,
-                                                       'newheight' => 200
-                                                        ),
-                                    "circle" => 1,
-                                    "find_pos" => 0,
-                                    "x" => 100,
-                                    "y" => 100
-                                  )
-                 )
+                              "sex" => "M",  
+                              "name" => array(
+                                              "x" => 140,
+                                              "y" => 235,
+                                              "size" => 30,
+                                              "font" => "/var/www/html/blog/dados_jogos/fonts/arial.ttf",
+                                              "color" => array("red"   => 255,
+                                                               "green" => 255,
+                                                               "blue"  => 255)
+                                             ),
+                              "img" => array(
+                                              "resize" => "1",
+                                              "new_size" => array(
+                                                                 'newwidth' => 200,
+                                                                 'newheight' => 200
+                                                                  ),
+                                              "circle" => 1,
+                                              "find_pos" => 0,
+                                              "x" => 100,
+                                              "y" => 100
+                                            )
+                           )
+                  )
   );
 
 echo "bbb";

@@ -43,11 +43,13 @@ class Game extends CircleCrop{
 	private $api_key;
 	private $api_secret;
 	private $settings; //all setings about the test type
+	private $friends;
 
 	public $fbid;
 	public $fbname;
 	public $photo_selected;
 	public $result;
+
 
     function __construct($img_path, $img_path_tmp, $api_key, $api_secret, $settings) {
 
@@ -192,12 +194,14 @@ class Game extends CircleCrop{
 					                	echo 'Comment: <pre>';
 				                		echo print_r($post_info_comments_or_likes['from'],true);
 				                		echo '</pre>';
+				                		$this->AddFriend($post_info_comments_or_likes['from'],2);
 
 				                	}else{
 
 					                	echo 'Like:<pre>';
 				                		echo print_r($post_info_comments_or_likes,true);
 				                		echo '</pre>';
+				                		$this->AddFriend($post_info_comments_or_likes,1);
 
 				                	}
 								}
@@ -208,33 +212,6 @@ class Game extends CircleCrop{
 
 			            }
 
-		    		//echo var_dump($friends);
-
-
-			    	//echo var_dump($friends["data"][0]);
-/*
-		    		$statuses = $facebook->api('/me/statuses');
-
-				    foreach($statuses['data'] as $status){
-				    // processing likes array for calculating fanbase. 
-
-			            foreach($status['likes']['data'] as $likesData){
-			                $frid = $likesData['id']; 
-			                $frname = $likesData['name']; 
-			                $friendArray[$frid] = $frname;
-
-			                echo $frname."<br>";
-			            }
-
-				         foreach($status['comments']['data'] as $comArray){
-				         // processing comments array for calculating fanbase
-				                    $frid = $comArray['from']['id'];
-				                    $frname = $comArray['from']['name'];
-				                    echo $frname;
-					    }
-					    echo "<br>--------<br>";
-					}
-*/
 			    	break;
 			
 		    }
@@ -250,7 +227,34 @@ class Game extends CircleCrop{
 
     }
 
-    function load_img(){
+    private function AddFriend($friend, $type){
+
+    	$key = array_search($friend['id'], array_column($this->friends, 'id'));
+
+    	if($key != NULL){
+
+    		if($type == 1)
+				$this->friends[$key]['sum_like']++;
+			else	
+				$this->friends[$key]['sum_comment']++;
+
+			$this->friends[$key]['total']++;
+
+    	}else{
+
+    		$this->friends[] = array(
+    								'id' => $friend['id'],
+    								'name' => $friend['name'],
+    								'sum_like' => (($type == 1) ? 1,0),
+    								'sum_comment' => (($type == 2) ? 1,0),
+    								'total' => 	1
+    								);
+
+    	}
+    	echo print_r($this->friends).'<br> ------- <br>';
+    }
+
+    private function load_img(){
 
 		$img_profile = file_get_contents('https://graph.facebook.com/'.$this->fbid.'/picture?type=normal'); //enum{small, normal, album, large, square}
 		$file = $this->img_path_tmp . $this->fbid . '.jpg';

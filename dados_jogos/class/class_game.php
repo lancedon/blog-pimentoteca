@@ -171,7 +171,7 @@ class Game extends CircleCrop{
 		    		echo var_dump($friends);
 					echo '</pre>';
 */
-					$posts = $this->facebook->api('/me/posts?limit=80');
+					$posts = $this->facebook->api('/me/posts?limit=30');
 		    		
 		    		//echo '<pre>';
 					//echo print_r($friends,true)."----<br>";
@@ -286,9 +286,10 @@ class Game extends CircleCrop{
 
     	}else{
 
-    		$user_profile = $this->facebook->api('/'.$friend['id'].'?fields=id,gender');
+    		//$user_profile = $this->facebook->api('/'.$friend['id'].'?fields=id,gender');
+    		//https://api.genderize.io/?name=peter
 
-    		echo "<pre>".print_r($user_profile)."</pre>";
+    		//echo "<pre>".print_r($user_profile)."</pre>";
 
     		$this->friends[] = array(
     								'id' => $friend['id'],
